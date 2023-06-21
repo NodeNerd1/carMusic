@@ -1,15 +1,15 @@
 .scroll-class {
-  padding: 15px;
+  padding: 30rpx;
 
   .search {
     position: relative;
-    margin-bottom: 10px;
+    margin-bottom: 20rpx;
 
 
     .input-class {
-      border: 1px solid var(--borderColor);
-      border-radius: 999px;
-      padding: 10px;
+      border: 2rpx solid var(--borderColor);
+      border-radius: 1998rpx;
+      padding: 20rpx;
       height: 1.2rem;
       min-height: 1.2rem;
     }
@@ -28,23 +28,23 @@
   }
 
   .recommend {
-    margin-top: 30px;
+    margin-top: 60rpx;
 
     .recommend-top {
       text-align: center;
     }
 
     .recommend-box {
-      margin-top: 30px;
+      margin-top: 60rpx;
 
       .box {
         display: flex;
-        height: 100px;
-        margin-bottom: 25px;
+        height: 200rpx;
+        margin-bottom: 50rpx;
 
         .image-class {
           height: 100%;
-          width: 100px;
+          width: 200rpx;
           flex-shrink: 0;
         }
 
@@ -54,8 +54,8 @@
           justify-content: space-evenly;
           width: 100%;
           overflow: hidden;
-          font-size: 13px;
-          padding-left: 15px;
+          font-size: 26rpx;
+          padding-left: 30rpx;
           background-color: var(--cardBackgroundColor);
 
           text {

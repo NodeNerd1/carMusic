@@ -1,16 +1,16 @@
 .search-page {
   width: 100%;
-  padding: 15px;
+  padding: 30rpx;
 
   .search {
     position: relative;
-    margin-bottom: 10px;
+    margin-bottom: 20rpx;
 
 
     .input-class {
-      border: 1px solid var(--borderColor);
-      border-radius: 999px;
-      padding: 10px;
+      border: 2rpx solid var(--borderColor);
+      border-radius: 1998rpx;
+      padding: 20rpx;
       height: 1.2rem;
       min-height: 1.2rem;
     }
@@ -30,45 +30,45 @@
       flex-wrap: wrap;
 
       .item {
-        padding: 2px 10px;
-        border: 1px solid var(--unifiedGreen);
-        margin-right: 10px;
-        border-radius: 10px;
-        margin-top: 8px;
-        font-size: 14px;
+        padding: 4rpx 20rpx;
+        border: 2rpx solid var(--unifiedGreen);
+        margin-right: 20rpx;
+        border-radius: 20rpx;
+        margin-top: 16rpx;
+        font-size: 28rpx;
       }
     }
 
     .histroy {
-      margin-top: 15px;
+      margin-top: 30rpx;
 
       .title {
-        padding: 5px 0;
+        padding: 10rpx 0;
       }
 
       .histroy-wrapper {
-        max-height: 400px;
+        max-height: 800rpx;
 
         .item {
           display: flex;
-          padding: 10px 0;
+          padding: 20rpx 0;
 
           .txt {
             flex: 1;
-            text-indent: 20px;
+            text-indent: 40rpx;
           }
 
           .x {
-            flex: 0 0 15px;
-            padding: 0 10px;
+            flex: 0 0 30rpx;
+            padding: 0 20rpx;
           }
         }
       }
 
       .clear {
         text-align: center;
-        width: 100px;
-        padding: 5px;
+        width: 200rpx;
+        padding: 10rpx;
         margin: 0 auto;
       }
     }
@@ -79,24 +79,24 @@
 
     .singer-wrapper {
       .item {
-        height: 50px;
-        line-height: 50px;
+        height: 100rpx;
+        line-height: 100rpx;
         display: flex;
-        padding: 5px 0;
+        padding: 10rpx 0;
 
         .image {
-          height: 45px;
-          width: 45px;
+          height: 90rpx;
+          width: 90rpx;
           border-radius: 100%;
-          margin-right: 15px;
+          margin-right: 30rpx;
         }
       }
     }
 
     .song-wrapper {
       .item {
-        height: 40px;
-        line-height: 40px;
+        height: 80rpx;
+        line-height: 80rpx;
         overflow: hidden;
         text-overflow: ellipsis;
         white-space: nowrap;

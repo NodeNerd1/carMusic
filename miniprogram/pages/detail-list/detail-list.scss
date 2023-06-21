@@ -1,26 +1,26 @@
 .bg-image {
-  height: 280px;
+  height: 560rpx;
   background-repeat: no-repeat;
   background-size: cover;
   position: relative;
 
   button {
     position: absolute;
-    bottom: 20px;
-    border-radius: 100px;
-    font-size: 14px;
-    width: 150px;
+    bottom: 40rpx;
+    border-radius: 200rpx;
+    font-size: 28rpx;
+    width: 300rpx;
     z-index: 2;
   }
 
   .leftbutton {
-    left: 20px;
+    left: 40rpx;
     color: hsla(0, 0%, 100%, .9);
     border-color: hsla(0, 0%, 100%, .9);
   }
 
   .rightbutton {
-    right: 20px;
+    right: 40rpx;
   }
 
   .cover {
@@ -35,10 +35,10 @@
 
 .scroll-wrapper {
   .block-box {
-    padding: 20px;
+    padding: 40rpx;
     display: flex;
     justify-content: space-between;
-    border-bottom: 1px var(--borderColor) solid;
+    border-bottom: 2rpx var(--borderColor) solid;
 
     &:last-child {
       border-bottom: none;
@@ -47,27 +47,27 @@
     .block-text {
       white-space: nowrap;
       overflow: hidden;
-      margin-right: 25px;
+      margin-right: 50rpx;
 
       .block-name {
         overflow: hidden;
         text-overflow: ellipsis;
-        font-size: 18px;
+        font-size: 36rpx;
 
       }
 
       .block-singer {
         overflow: hidden;
         text-overflow: ellipsis;
-        font-size: 15px;
-        margin-top: 9px;
+        font-size: 30rpx;
+        margin-top: 18rpx;
       }
     }
 
 
 
     .block-i {
-      font-size: 34px;
+      font-size: 68rpx;
     }
   }
 }

@@ -2,9 +2,9 @@
   width: 100%;
 
   .avatar-wrapper {
-    width: 100px;
-    height: 100px;
-    margin: 20px auto;
+    width: 200rpx;
+    height: 200rpx;
+    margin: 40rpx auto;
     padding: 0;
     border-radius: 20%;
 
@@ -16,15 +16,15 @@
 
 
   .nicknameContent {
-    border-top: 1px var(--borderColor) solid;
-    border-bottom: 1px var(--borderColor) solid;
+    border-top: 2rpx var(--borderColor) solid;
+    border-bottom: 2rpx var(--borderColor) solid;
     display: flex;
-    padding: 18px 0;
+    padding: 36rpx 0;
     align-items: center;
 
     .nickname {
       flex-grow: 1;
-      margin-left: 20px
+      margin-left: 40rpx
     }
 
     .name-input {
