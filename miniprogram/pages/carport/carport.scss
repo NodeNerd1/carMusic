@@ -1,0 +1,217 @@
+.carport-view {
+  width: 100%;
+
+  .top {
+    text-align: center;
+    margin-bottom: 20px;
+
+    .my-top {
+      line-height: 95px;
+      font-size: 26px;
+    }
+
+    .my-number {
+      font-size: 19px;
+    }
+  }
+
+  .tag {
+    position: absolute;
+    top: 137px;
+    left: 204px;
+    padding: 0 4px;
+    font-size: 13px;
+    border-radius: 999px;
+    line-height: 16px;
+  }
+
+  .tag-offline {
+    background-color: var(--cardBackgroundColor);
+  }
+
+  .tag-members {
+    background-color: #07c160;
+  }
+
+  .tag-owner {
+    background-color: var(--tagOwnerColor);
+  }
+
+  .parkingSpace {
+    display: grid;
+    grid-template-rows: repeat(2, 100px);
+    grid-template-columns: repeat(3, 1fr);
+    justify-items: center;
+    align-items: center;
+    margin-top: 8px;
+
+
+    .members {
+      width: 100%;
+      height: 100%;
+      text-align: center;
+      position: relative;
+      overflow: hidden;
+
+      &:nth-child(n+4) {
+        margin-top: 13px;
+      }
+
+      .Parcel {
+        .avatar {
+          width: 80px;
+          height: 80px;
+          border-radius: 50%;
+        }
+
+        .name {
+          overflow: hidden;
+          white-space: nowrap;
+          text-overflow: ellipsis;
+          padding: 0 8px;
+        }
+
+        .members-tag {
+          position: absolute;
+          top: 2px;
+          right: 12px;
+          padding: 0 4px;
+          font-size: 13px;
+          border-radius: 999px;
+          line-height: 16px;
+        }
+      }
+
+      .Add {
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        font-size: 42px;
+        transform: translateX(-50%) translateY(-50%);
+      }
+    }
+  }
+
+  .buttonList {
+    display: flex;
+    margin-top: 28px;
+
+    button {
+      background-color: var(--cardBackgroundColor);
+    }
+  }
+
+  .component-view {
+    margin-top: 22px;
+
+    .component-top {
+      display: flex;
+      justify-content: space-around;
+
+    }
+
+    .component-bottom {
+      margin-top: 10px;
+      display: flex;
+      justify-content: space-around;
+
+    }
+
+    i {
+      font-size: 32px
+    }
+  }
+
+  .song-list {
+    width: 100%;
+    height: 100%;
+    position: fixed;
+    bottom: 0;
+    z-index: 99;
+    display: flex;
+    align-items: flex-end;
+    transition: all 0.7s;
+
+    .song-box {
+      width: 100%;
+      height: 320px;
+      background-color: var(--cardBackgroundColor);
+
+      .plyer-list-title {
+        text-align: center;
+        line-height: 50px;
+        border-bottom: 1px solid var(--borderColor);
+      }
+
+      .playlist-wrapper {
+        height: 218px;
+        padding: 7px 10px;
+        box-sizing: border-box;
+
+        .item {
+          display: flex;
+          justify-content: space-between;
+          line-height: 45px;
+          height: 45px;
+          margin: 0 12px;
+          border-bottom: 1px dashed var(--borderColor);
+
+          &:last-child {
+            border-bottom: none;
+          }
+
+          .text-box {
+            overflow: hidden;
+            white-space: nowrap;
+            margin-right: 0px;
+            text-overflow: ellipsis;
+            color: var(--singerTextColor);
+
+            .songName-box {
+              font-size: 14px;
+              color: var(--textColor);
+            }
+
+            .singer-box {
+              font-size: 12px;
+              color: var(--singerTextColor);
+            }
+
+
+          }
+
+          .button-box {
+            flex-shrink: 0;
+            font-size: 13px;
+
+            .playNow {
+              margin-right: 10px;
+            }
+          }
+        }
+
+        .loading {
+          position: absolute;
+          top: 50%;
+          left: 50%;
+          transform: translateX(-50%) translateY(-50%);
+          font-size: 20px
+        }
+      }
+
+      .close-box {
+        text-align: center;
+        line-height: 50px;
+        border-top: 1px solid var(--borderColor);
+      }
+    }
+  }
+
+  .popup {
+    transform: translateY(0%);
+  }
+
+  .pull-down {
+    transform: translateY(100%);
+  }
+}

@@ -1,0 +1,63 @@
+.list-view {
+  height: 100%;
+
+  .list-group {
+    padding-bottom: 30px;
+
+    .list-group-title {
+      height: 30px;
+      line-height: 30px;
+      padding-left: 20px;
+      font-size: 12px;
+      background: var(--cardBackgroundColor);
+    }
+
+    .list-group-item {
+      display: flex;
+      align-items: center;
+      padding: 10px 0 10px 20px;
+      border-bottom: 1px var(--borderColor) solid;
+
+      &:last-child {
+        border-bottom: none;
+      }
+
+      .avatar {
+        width: 50px;
+        height: 50px;
+        border-radius: 50%;
+      }
+
+      .name {
+        margin-left: 20px;
+        font-size: 14px;
+      }
+    }
+  }
+
+
+}
+
+.list-shortcut {
+  position: fixed;
+  top: 50%;
+  right: 0;
+  width: 20px;
+  padding: 20px 0;
+  z-index: 30;
+  transform: translateY(-50%);
+  -webkit-transform: translateY(-50%);
+  border-radius: 20px;
+  text-align: center;
+  background: rgba(0, 0, 0, 0.3);
+  font-family: Helvetica;
+
+  .item {
+    padding: 3px;
+    font-size: 12px;
+  }
+
+  .current {
+    color: #95ec69;
+  }
+}

@@ -1,0 +1,11 @@
+<view style="width: 100%;">
+  <user-info></user-info>
+  <view class="tab">
+    <view wx:for="{{navs}}" wx:key="path" data-url="{{item.path}}" data-title="{{item.title}}" data-index="{{index}}" class="item" bind:tap="goView">
+      <view class="text">{{item.title}}</view>
+      <view class="more">
+        ›
+      </view>
+    </view>
+  </view>
+</view>

@@ -1,0 +1,10 @@
+<view class="viewContent">
+  <button class="avatar-wrapper" open-type="chooseAvatar" bind:chooseavatar="onChooseAvatar">
+    <image class="avatar" src="{{userAvatar}}"></image>
+  </button>
+  <view class="nicknameContent">
+    <text class="nickname">昵称</text>
+    <input type="nickname" class="name-input" placeholder="请输入昵称" model:value="{{userName}}" bind:confirm="save" />
+  </view>
+  <button type="primary" style="margin-top: 30px;" bind:tap="save">保存</button>
+</view>

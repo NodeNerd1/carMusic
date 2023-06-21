@@ -1,0 +1,47 @@
+.view-class {
+  .bg-image {
+    height: 280px;
+    background-repeat: no-repeat;
+    background-size: cover;
+    position: relative;
+
+    button {
+      position: absolute;
+      bottom: 20px;
+      border-radius: 100px;
+      font-size: 14px;
+      width: 125px;
+    }
+
+    .leftbutton {
+      left: 20px;
+      color: #da3231;
+      border-color: #da3231;
+    }
+
+    .rightbutton {
+      right: 20px;
+      color: #58be6a;
+      border-color: #58be6a;
+    }
+
+
+  }
+
+
+  .tab {
+    padding: 15px;
+
+    .item {
+      display: flex;
+      justify-content: space-between;
+      font-size: 17px;
+      align-items: center;
+      padding: 10px 0;
+
+      .more {
+        font-size: 27px;
+      }
+    }
+  }
+}

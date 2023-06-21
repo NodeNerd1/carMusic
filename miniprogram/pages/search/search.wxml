@@ -1,0 +1,39 @@
+<view class="search-page">
+  <view class="search">
+    <input bind:input="searchAction" bind:confirm="searchAction" class="input-class" placeholder="搜索歌手、歌曲" model:value="{{value}}"></input>
+    <icon bind:tap="searchAction" class="icon-class" type="search" size="45rpx"></icon>
+  </view>
+  <view class="main" hidden="{{result}}">
+    <view class="hot-wrapper">
+      <view class="title">热门搜索: </view>
+      <view class="hot-details">
+        <view class="item" wx:for="{{hotSearch}}" wx:key="index" bind:tap="searchAction" data-txt="{{item.k}}">{{item.k}}</view>
+      </view>
+    </view>
+    <view class="histroy">
+      <view class="title">历史搜索: </view>
+      <scroll-view class="histroy-wrapper" scroll-y>
+        <view class="item" wx:for="{{historySearchList}}" wx:key="index" bind:tap="searchAction" data-txt="{{item}}">
+          <view class="txt">{{item}}</view>
+          <view class="x" catch:tap="deleteHistorySearch" data-index="{{index}}">X</view>
+        </view>
+      </scroll-view>
+      <view class="clear" wx:if="{{historySearchList.length}}" catch:tap="deleteHistorySearch">
+        清空历史搜索
+      </view>
+    </view>
+  </view>
+  <scroll-view scroll-y class="search-result-wrapper" hidden="{{!result}}">
+    <view class="singer-wrapper">
+      <view class="item" wx:for="{{singers}}" wx:key="mid" data-item="{{item}}" bind:tap="goSinger">
+        <image class="image" src="{{item.pic}}" />
+        {{item.name}}
+      </view>
+    </view>
+    <view class="song-wrapper">
+      <view class="item" wx:for="{{songs}}" wx:key="mid" data-mid="{{item.mid}}" bind:tap="selectSong">
+        {{item.name}} - {{item.singer}}
+      </view>
+    </view>
+  </scroll-view>
+</view>

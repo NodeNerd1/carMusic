@@ -1,0 +1,7 @@
+<view class="viewContent">
+  <view class="nicknameContent">
+    <text class="nickname">Cookie:</text>
+    <input class="name-input" placeholder="请输入" maxlength="{{-1}}" model:value="{{cookieValue}}" bind:confirm="save" />
+  </view>
+  <button type="primary" style="margin-top: 30px;" bind:tap="save">保存</button>
+</view>

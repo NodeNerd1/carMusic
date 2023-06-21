@@ -1,0 +1,15 @@
+.tab {
+  padding: 15px;
+
+  .item {
+    display: flex;
+    justify-content: space-between;
+    font-size: 17px;
+    align-items: center;
+    padding: 10px 0;
+
+    .more {
+      font-size: 27px;
+    }
+  }
+}

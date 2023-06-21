@@ -1,0 +1,68 @@
+<view style="width: 100%;">
+  <view class="background" style="background-image: url({{songImage}})">
+  </view>
+  <view class="song-display">
+    <view class="song-top">
+      <view class="song-text">
+        {{songName}}
+      </view>
+      <view class="singer-text">
+        <text class="decoration">- </text> <text class="middle-word">{{singer}}</text> <text class="decoration"> -</text>
+      </view>
+    </view>
+    <swiper class="swiper-view" bind:change="changeEvent">
+      <swiper-item>
+        <view class="cd  {{ paused ? 'play' : 'pause'}}">
+          <image class="image" src="{{songImage}}" />
+        </view>
+        <view class="current-lyrics">
+          {{currentText}}
+        </view>
+        <i class="iconfont  icon-shoucang i-block shoucang" catch:tap="loveTap"></i>
+        <i class="iconfont  icon-tianjia i-block tianjia" catch:tap="collectionTap"></i>
+      </swiper-item>
+      <swiper-item>
+        <scroll-view class="lyric-wrapper" scroll-y scroll-into-view="line{{toLineNum}}" scroll-with-animation>
+          <view wx:if="{{currentLyric}}">
+            <view wx:for="{{currentLyric.lines}}" wx:key="index" id="line{{index}}" class="text {{currentLineNum == index ? 'select': '' }}">{{item.txt}}
+            </view>
+          </view>
+          <view wx:if="{{!currentLyric}}">
+            <view class="text">暂无歌词</view>
+          </view>
+        </scroll-view>
+      </swiper-item>
+    </swiper>
+    <view>
+      <view wx:for="12" wx:key="*this" class="dots {{currentDot==index?'current':''}}"></view>
+    </view>
+  </view>
+  <view class="song-component">
+    <view class="progress-view">
+      <text class="textTime">{{currentTime}}</text>
+      <slider class="slider-class" block-size="{{12}}" value="{{progressValue}}" max="{{interval}}" disabled="{{disabledSlider}}" activeColor="rgba(149, 236, 105, 0.9)" bind:change="progressChange"></slider>
+      <text>{{duration}}</text>
+    </view>
+    <view class="component-view">
+      <i class="iconfont {{playMechanism}}" bind:tap="playMechanismTap"></i>
+      <i class="iconfont icon-skip-back-mini-fill" bind:tap="skipBack"></i>
+      <i class="iconfont {{paused ? 'icon-pause-mini-fill' : 'icon-play-mini-fill' }}" bind:tap="togglePlayingTap"></i>
+      <i class="iconfont icon-skip-forward-mini-fill" bind:tap="skipForward"></i>
+      <i class="iconfont icon-play-list-fill" bind:tap="openListTap"></i>
+    </view>
+  </view>
+  <view class="song-list {{playList.length ? 'popup' : 'pull-down' }}" bind:tap="closeWindowTap">
+    <view class="song-box" catch:tap="emptyTap">
+      <view class="plyer-list-title">播放队列({{playList.length}}首)</view>
+      <scroll-view class="playlist-wrapper" scroll-y scroll-into-view="list{{playListIndex}}">
+        <view wx:for="{{playList}}" wx:key="index" class="item" id="list{{index}}" data-index="{{index}}" bind:tap="playthis">
+          <view class="text-box {{index==playListIndex ? 'playing':''}}">
+            <text class="songName-box {{index==playListIndex ? 'playing':''}}">{{item.songName}}</text><text class="singer-box {{index==playListIndex ? 'playing':''}}"> - {{item.singer}}</text>
+          </view>
+          <i wx:if="{{index==playListIndex}}" class="iconfont icon-rhythm-line {{index==playListIndex ? 'playing':''}}"></i>
+        </view>
+      </scroll-view>
+      <view class="close-box" bindtap="closeWindowTap">关闭</view>
+    </view>
+  </view>
+</view>

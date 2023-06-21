@@ -1,0 +1,31 @@
+[
+  {
+    "name": "baoc1",
+    "value": {
+      "type": "componentFn",
+      "licensePlateNumber": 5840,
+      "playNext": {
+        "albumName": "中国说唱巅峰对决2023 第6期 加更 ",
+        "songMid": "002kwnLW3K5LZR",
+        "songName": "诀爱·尽 (Live)"
+      }
+    }
+  },
+  {
+    "name": "123",
+    "value": {
+      "type": "addSongList",
+      "_openid": "oY-kS5KY2biyWmdibhncNj5PKKAM",
+      "songList": [
+        {
+          "albumName": "第一步",
+          "interval": 235,
+          "singer": "姚安娜",
+          "songImage": "https://y.gtimg.cn/music/photo_new/T002R300x300M000003Fbaki003Gj7.jpg?max_age=2592000",
+          "songMid": "0018K1P50kYFGU",
+          "songName": "第一步"
+        }
+      ]
+    }
+  }
+]

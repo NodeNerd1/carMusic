@@ -1,0 +1,28 @@
+<scroll-view scroll-y>
+  <view class="scroll-class">
+    <view class="search" bind:tap="toSearch">
+      <input class="input-class" placeholder="搜索歌手、歌曲" disabled></input>
+      <icon class="icon-class" type="search" size="45rpx"></icon>
+    </view>
+    <swiper indicator-dots indicator-color="rgba(255,255,255,0.5)" indicator-active-color="rgba(255,255,255,0.8)" autoplay interval="{{3000}}" duration="{{500}}" circular>
+      <swiper-item wx:for="{{slider}}" wx:key="picUrl">
+        <image class="slide-image" src="{{item.picUrl}}" />
+      </swiper-item>
+    </swiper>
+    <view class="recommend">
+      <view class="recommend-top"> 热门榜单推荐 </view>
+      <view class="recommend-box">
+        <block wx:for="{{recommendList}}" wx:key="picUrl">
+          <view class="box" bind:tap="viewDetails" data-item="{{item}}">
+            <image class="image-class" lazy-load src="{{item.picUrl}}" />
+            <view class="text-class">
+              <block wx:for="{{item.songList}}" wx:key="index">
+                <text>{{index + 1}}. {{item.songname}}-{{item.singername}}</text>
+              </block>
+            </view>
+          </view>
+        </block>
+      </view>
+    </view>
+  </view>
+</scroll-view>

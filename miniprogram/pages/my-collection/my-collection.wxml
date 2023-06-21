@@ -1,0 +1,14 @@
+<view class="view-class" style="width: 100%;">
+  <view class="bg-image" style="background-image: url('{{backgroundImage}}')">
+    <button class="leftbutton" plain bind:tap="deleteAction">{{delete ? '取消删除' :'删除'}}</button>
+    <button class="rightbutton" plain bind:tap="createCollectionFn">创建收藏</button>
+  </view>
+  <view class="tab">
+    <view wx:for="{{collectionList}}" wx:key="_id" class="item" data-item="{{item}}" data-index="{{index}}" bind:tap="{{delete ? 'deleteCollectionFn' : 'goDetails' }}">
+      <view class="text">{{item.name}}</view>
+      <view class="more">
+        {{delete ? item.name == '默认收藏' ? '›' : 'X' : '›' }}
+      </view>
+    </view>
+  </view>
+</view>

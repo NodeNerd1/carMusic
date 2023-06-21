@@ -1,0 +1,21 @@
+page {
+  --backgroundColor: #f7f7f7;
+  --textColor: rgba(0, 0, 0, .9);
+  --singerTextColor: rgba(0, 0, 0, 0.4);
+  --borderColor: #e4e8eb;
+  --cardBackgroundColor: #d6dee4;
+  --tagOwnerColor: #ef5a6b;
+  --unifiedGreen: #07c160;
+}
+
+@media(prefers-color-scheme: dark) {
+  page {
+    --backgroundColor: #1f1f1f;
+    --textColor: hsla(0, 0%, 100%, .8);
+    --singerTextColor: hsla(0, 0%, 100%, .4);
+    --borderColor: #606060;
+    --cardBackgroundColor: #333333;
+    --tagOwnerColor: #ee0a24;
+    --unifiedGreen: rgba(149, 236, 105, 0.9);
+  }
+}

@@ -1,0 +1,24 @@
+<view style="width: 100%;">
+  <view class="bg-image" style="background-image: url('{{backgroundImage}}')">
+    <button class="leftbutton" plain bind:tap="randomPlayAll">随机播放全部</button>
+    <button wx:if="{{!love}}" class="rightbutton" plain type="primary" bind:tap="buttonSwitchTap">{{collection?'取消收藏' :'收藏' }}</button>
+    <button wx:else class="rightbutton" plain type="warn" bind:tap="buttonSwitchTap">{{deleteSwitch?'取消删除' :'删除' }}</button>
+    <view class="cover"></view>
+  </view>
+  <view class="scroll-wrapper">
+    <scroll-view scroll-y>
+      <view wx:for="{{singerSongList}}" wx:key="index" class="block-box" data-data="{{item}}" bind:tap="playMusicTap">
+        <view class="block-text">
+          <view class="block-name">{{item.songName}}</view>
+          <view class="block-singer">
+            <text>{{ item.singer }}</text>
+            <text> - {{item.albumName}}</text>
+          </view>
+        </view>
+        <i wx:if="{{!love}}" class="iconfont {{  collection ? 'icon-tianjia': 'icon-shoucang'}} block-i" data-data="{{item}}" catch:tap="buttonActionTap"></i>
+        <i wx:elif="{{collectionStatus}}" class="iconfont {{  deleteSwitch ? 'icon-shanchu' : 'icon-shoucang'}} block-i" data-data="{{item}}" data-index="{{index}}" catch:tap="collectionButtonActionTap"></i>
+        <i wx:else class="iconfont {{  deleteSwitch ? 'icon-shanchu' : 'icon-tianjia'}} block-i" data-data="{{item}}" data-index="{{index}}" catch:tap="deleteButtonActionTap"></i>
+      </view>
+    </scroll-view>
+  </view>
+</view>

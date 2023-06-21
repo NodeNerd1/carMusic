@@ -1,0 +1,6 @@
+<view class="header" bind:tap="tapEvent">
+  <image class="user-avatar" src="{{userAvatar}}"></image>
+  <text class='user-name'>
+    {{userName}}
+  </text>
+</view>

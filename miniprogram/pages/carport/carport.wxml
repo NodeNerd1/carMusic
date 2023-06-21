@@ -1,0 +1,64 @@
+<view class="carport-view">
+  <view class="top">
+    <view class="my-top">我的车牌号</view>
+    <text class="my-number" user-select>{{uniqueLicensePlateId}}</text>
+  </view>
+  <user-info></user-info>
+  <text class="tag {{tagText == '离线' ? 'tag-offline' : tagText=='成员' ? 'tag-members' : 'tag-owner' }}">{{tagText}}</text>
+  <view class="parkingSpace">
+    <view wx:for="{{parkingSpaceList}}" wx:key="index" class="members">
+      <view wx:if="{{item.name}}" class="Parcel">
+        <image class="avatar" src="{{item.avatar}}"></image>
+        <view class="name">
+          {{item.name}}
+        </view>
+        <text wx:if="{{item.owner}}" class="members-tag tag-owner">车主</text>
+      </view>
+      <view wx:else class="Add">
+        +
+      </view>
+    </view>
+  </view>
+  <view class="buttonList">
+    <button size="mini" bind:tap="becomeTap">成为车主</button>
+    <button size="mini" bind:tap="joinTap">加入车队</button>
+    <button size="mini" bind:tap="leaveTap">离开车队</button>
+  </view>
+  <view wx:if="{{tagText == '成员'}}" class="component-view">
+    <view class="component-top">
+      <i class="iconfont icon-repeat--fill" data-data="playRepeat" bind:tap="buttonOperationTap"></i>
+      <i class="iconfont icon-shuffle-fill" data-data="playShuffle" bind:tap="buttonOperationTap"></i>
+      <i class="iconfont icon-repeat-one-line" data-data="playRepeatOne" bind:tap="buttonOperationTap"></i>
+      <i class="iconfont icon-play-list-fill" bind:tap="openListTap"></i>
+    </view>
+    <view class="component-bottom">
+      <i class="iconfont icon-skip-back-mini-fill" data-data="skipBack" bind:tap="buttonOperationTap"></i>
+      <i class="iconfont  icon-pause-mini-fill" data-data="paused" bind:tap="buttonOperationTap"></i>
+      <i class="iconfont  icon-play-mini-fill" data-data="play" bind:tap="buttonOperationTap"></i>
+      <i class="iconfont icon-skip-forward-mini-fill" data-data="skipForward" bind:tap="buttonOperationTap"></i>
+    </view>
+  </view>
+  <view class="song-list {{playListShow ? 'popup' : 'pull-down' }}" bind:tap="closeWindowTap">
+    <view class="song-box" catch:tap="emptyTap">
+      <view class="plyer-list-title">车队 {{currentFleetId}} 的默认收藏({{playList.length}}首)</view>
+      <scroll-view class="playlist-wrapper" scroll-y>
+        <block wx:if="{{playList.length}}">
+          <view wx:for="{{playList}}" wx:key="index" class="item">
+            <view class="text-box">
+              <text class="songName-box">{{item.songName}}</text>
+              <text class="singer-box"> - {{item.singer}}</text>
+            </view>
+            <view class="button-box">
+              <text class="playNow" data-data="playthis" data-item="{{item}}" bind:tap="play">立即播放</text>
+              <text class="addToNextSong" data-data="playNext" data-item="{{item}}" bind:tap="play">添加到下一首</text>
+            </view>
+          </view>
+        </block>
+        <view wx:else class="loading">
+          加载中...
+        </view>
+      </scroll-view>
+      <view class="close-box" bindtap="closeWindowTap">关闭</view>
+    </view>
+  </view>
+</view>

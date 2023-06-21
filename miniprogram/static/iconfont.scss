@@ -1,0 +1,68 @@
+@font-face {
+  font-family: "iconfont";
+  /* Project id 4110276 */
+  src:
+    url('data:application/x-font-woff;charset=utf-8;base64,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') format('woff'),
+    url('iconfont.ttf?t=1686806966920') format('truetype');
+}
+
+.iconfont {
+  font-family: "iconfont" !important;
+  font-size: 16px;
+  font-style: normal;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  //
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--textColor);
+}
+
+.icon-shanchu:before {
+  content: "\e64a";
+}
+
+.icon-tianjia:before {
+  content: "\e64b";
+}
+
+.icon-shoucang:before {
+  content: "\e666";
+}
+
+.icon-pause-mini-fill:before {
+  content: "\e70b";
+}
+
+.icon-play-list-fill:before {
+  content: "\e70f";
+}
+
+.icon-play-mini-fill:before {
+  content: "\e710";
+}
+
+.icon-repeat--fill:before {
+  content: "\e714";
+}
+
+.icon-repeat-one-line:before {
+  content: "\e716";
+}
+
+.icon-shuffle-fill:before {
+  content: "\e717";
+}
+
+.icon-rhythm-line:before {
+  content: "\e718";
+}
+
+.icon-skip-back-mini-fill:before {
+  content: "\e719";
+}
+
+.icon-skip-forward-mini-fill:before {
+  content: "\e71a";
+}

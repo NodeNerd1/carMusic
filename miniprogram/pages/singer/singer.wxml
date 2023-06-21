@@ -1,0 +1,18 @@
+<view style="width: 100%;">
+  <scroll-view class="list-view" scroll-y scroll-with-animation bind:scroll="scroll" scroll-into-view="view{{jumpIndex}}">
+    <view wx:for="{{singerList}}" wx:key="index" class="list-group" id="view{{index}}">
+      <view class="list-group-title">{{item.title}}</view>
+      <view>
+        <view wx:for="{{item.items}}" wx:for-item="singerItem" wx:key="mid" class="list-group-item" data-singer="{{singerItem}}" bind:tap="toSingerDetail">
+          <image class="avatar" src="{{singerItem.avatar}}" />
+          <text class="name">{{singerItem.name}}</text>
+        </view>
+      </view>
+    </view>
+  </scroll-view>
+  <view class="list-shortcut">
+    <view wx:for="{{singerList}}" wx:key="index" class="item {{currentIndex==index?'current':''}}" data-index="{{index}}" bind:tap="singerListTap">
+      {{item.title == '热门' ? '热' : item.title}}
+    </view>
+  </view>
+</view>
