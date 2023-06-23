@@ -4,9 +4,14 @@ import {
   queryCollection,
   generateNumber,
 } from "./api/cloudFunctionApi";
+import moment from "moment";
 
 App({
   onLaunch: async function () {
+    const time = "2023-06-25 08:00:00";
+    const currentTime = moment(new Date()).format("YYYY-MM-DD HH:mm:ss");
+    this.globalData.ishideTabBar = time > currentTime;
+
     if (!wx.cloud) {
       console.error("请使用 2.2.3 或以上的基础库以使用云能力");
     } else {
@@ -44,6 +49,7 @@ App({
     }
   },
   globalData: {
+    ishideTabBar: false,
     openid: "",
     collectionList: [],
     Cookie: "",

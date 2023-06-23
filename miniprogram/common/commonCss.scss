@@ -6,6 +6,10 @@ page {
   --cardBackgroundColor: #d6dee4;
   --tagOwnerColor: #ef5a6b;
   --unifiedGreen: #07c160;
+  --tabBarColor: #7A7E83;
+  --tabBarSelectedColor: #3cc51f;
+  --tabBarBorderStyle: #000000;
+  --tabBarBackgroundColor: #F7F7F7;
 }
 
 @media(prefers-color-scheme: dark) {
@@ -17,5 +21,9 @@ page {
     --cardBackgroundColor: #333333;
     --tagOwnerColor: #ee0a24;
     --unifiedGreen: rgba(149, 236, 105, 0.9);
+    --tabBarColor: #646464;
+    --tabBarSelectedColor: #51A937;
+    --tabBarBorderStyle: #ffffff;
+    --tabBarBackgroundColor: #1F1F1F;
   }
 }

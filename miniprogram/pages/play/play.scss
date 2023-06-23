@@ -246,3 +246,27 @@
 .pull-down {
   transform: translateY(100%);
 }
+
+.weather-class {
+  width: 100%;
+  background: #4D8AD7;
+  color: #fff;
+  font-size: 36rpx;
+
+  .content-class {
+    position: absolute;
+    top: 37%;
+    left: 50%;
+    transform: translateX(-50%) translateY(-50%);
+
+    .dataDisplay {
+      white-space: nowrap;
+      line-height: 120rpx;
+    }
+
+    .button-class {
+      display: flex;
+      margin-top: 50rpx;
+    }
+  }
+}

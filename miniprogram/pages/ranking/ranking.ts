@@ -30,20 +30,17 @@ Page({
     });
   },
 
-  viewDetails(event: WechatMiniprogram.BaseEvent){
-    const { topTitle, picUrl ,id} = event.currentTarget.dataset.item;
+  viewDetails(event: WechatMiniprogram.BaseEvent) {
+    const { topTitle, picUrl, id } = event.currentTarget.dataset.item;
 
     wx.navigateTo({
       url: "/pages/detail-list/detail-list",
       success: function (res) {
-        res.eventChannel.emit(
-          "getSingerItem",
-          {
-            name:topTitle,
-            avatar: picUrl,
-            topId: id
-          }
-        );
+        res.eventChannel.emit("getSingerItem", {
+          name: topTitle,
+          avatar: picUrl,
+          topId: id,
+        });
       },
     });
   },
@@ -56,7 +53,13 @@ Page({
   /**
    * 生命周期函数--监听页面显示
    */
-  onShow() {},
+  onShow() {
+    if (typeof this.getTabBar === "function" && this.getTabBar()) {
+      this.getTabBar().setData({
+        selected: 2,
+      });
+    }
+  },
 
   /**
    * 生命周期函数--监听页面隐藏

@@ -1,6 +1,7 @@
 import { getSongPlaySourceFile, getSongLyric } from "../../api/songApi";
 import { iLikeMusicAdd, playNextAdd } from "../../utils/play-list-add";
 import { addSongList } from "../../api/cloudFunctionApi";
+const amapFile = require("../../api/amap-wx.130.js");
 
 const Lyric = require("../../utils/lyric.js");
 const appData = getApp().globalData;
@@ -33,12 +34,79 @@ Page({
     currentText: "",
     currentLineNum: 0,
     toLineNum: -1,
+    ishideTabBar: false,
+    city: "",
+    weather: "",
+    windSpeed: "",
   },
 
   onLoad() {
-    this.playInit({ playNow: false });
+    this.setData({ ishideTabBar: appData.ishideTabBar });
+
+    if (appData.ishideTabBar) {
+      this.getWeatherFn();
+    } else {
+      this.playInit({ playNow: false });
+    }
   },
-  onShow() {},
+  getWeatherFn() {
+    wx.getSetting({
+      success: (res) => {
+        if (!res.authSetting["scope.userLocation"]) {
+          wx.showToast({
+            title: "位置权限不允许",
+            icon: "error",
+            duration: 1500,
+            mask: true,
+          });
+          this.setData({
+            city: "",
+            weather: "",
+            windSpeed: "",
+          });
+          return;
+        }
+        const myAmapFun = new amapFile.AMapWX({
+          key: "5f6243b248f440740fe234d19d4f848d",
+        });
+
+        myAmapFun.getWeather({
+          success: (data) => {
+            const {
+              province,
+              city: cityValue,
+              reporttime,
+              temperature,
+              weather: weatherValue,
+              humidity,
+              winddirection,
+              windpower,
+            } = data.liveData;
+            const city = province + "-" + cityValue + " " + reporttime;
+            const weather =
+              temperature + "℃" + " " + weatherValue + " " + humidity + "%湿度";
+            const windSpeed = winddirection + "风" + " " + windpower + "级";
+            this.setData({
+              city,
+              weather,
+              windSpeed,
+            });
+          },
+          fail: function (info) {
+            console.log(info);
+          },
+        });
+      },
+    });
+  },
+
+  onShow() {
+    if (typeof this.getTabBar === "function" && this.getTabBar()) {
+      this.getTabBar().setData({
+        selected: 0,
+      });
+    }
+  },
   jumpPlay(isRandomPlayAll = false) {
     isRandomPlayAll && this.setData({ playMechanism: playMechanismType[1] });
     this.playInit({ playNow: true });

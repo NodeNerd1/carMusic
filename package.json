@@ -14,5 +14,8 @@
     "gulp": "^4.0.2",
     "gulp-postcss": "^9.0.1",
     "postcss-px2units": "^0.2.0"
+  },
+  "dependencies": {
+    "moment": "^2.29.4"
   }
 }

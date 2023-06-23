@@ -1,3 +1,4 @@
+import {} from "../../api/cloudFunctionApi";
 const appData = getApp().globalData;
 Component({
   /**

@@ -1,4 +1,4 @@
-<view style="width: 100%;">
+<view style="width: 100%;" wx:if="{{!ishideTabBar}}">
   <view class="background" style="background-image: url({{songImage}})">
   </view>
   <view class="song-display">
@@ -63,6 +63,19 @@
         </view>
       </scroll-view>
       <view class="close-box" bindtap="closeWindowTap">关闭</view>
+    </view>
+  </view>
+</view>
+<view class="weather-class" wx:else>
+  <view class="content-class">
+    <view class="dataDisplay">
+      <view>当前：{{city}}</view>
+      <view>天气：{{weather}}</view>
+      <view>风速：{{windSpeed}}</view>
+    </view>
+    <view class="button-class">
+      <button size="mini" open-type="openSetting">修改授权</button>
+      <button size="mini" bind:tap="getWeatherFn">重新获取</button>
     </view>
   </view>
 </view>
